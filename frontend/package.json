@@ -32,6 +32,7 @@
     "@angular/router": "4.4.6",
     "@nguniversal/express-engine": "1.0.0-beta.3",
     "@nguniversal/module-map-ngfactory-loader": "1.0.0-beta.3",
+    "@angular/flex-layout": "2.0.0-beta.9",
     "core-js": "2.5.1",
     "primeng": "4.2.2",
     "font-awesome": "4.7.0",
