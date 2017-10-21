@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.omnia.cpa</groupId>
-    <artifactId>cpa-server</artifactId>
+    <artifactId>cpa-backend</artifactId>
     <version>0.0.1</version>
 
     <parent>
@@ -81,12 +81,22 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- OTHER -->
+        <!--OTHER-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jsr310.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${apache.commons.version}</version>
         </dependency>
 
     </dependencies>
@@ -99,14 +109,14 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <!--<db.host>vpn.server.omni-a.com</db.host>-->
-                <!--<db.name>OM_sources_temp</db.name>-->
-                <!--<db.username>taras</db.username>-->
-                <!--<db.password>Y3a5gWSNJVwR</db.password>-->
-                <db.host>localhost</db.host>
-                <db.name>cpa_test</db.name>
-                <db.username>root</db.username>
-                <db.password>root</db.password>
+                <db.host>vpn.server.omni-a.com</db.host>
+                <db.name>OM_sources_temp</db.name>
+                <db.username>taras</db.username>
+                <db.password>Y3a5gWSNJVwR</db.password>
+                <!--<db.host>localhost</db.host>-->
+                <!--<db.name>cpa_test</db.name>-->
+                <!--<db.username>root</db.username>-->
+                <!--<db.password>root</db.password>-->
                 <db.cp.init.size>20</db.cp.init.size>
                 <db.cp.max.size>30</db.cp.max.size>
                 <spring.profile>dev</spring.profile>

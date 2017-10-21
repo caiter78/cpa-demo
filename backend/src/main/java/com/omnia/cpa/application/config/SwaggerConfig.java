@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PagedResourcesAssembler;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -28,7 +30,7 @@ public class SwaggerConfig {
     @Bean
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)
-            .tags(new Tag("Person", "Person entity repository"))
+            .tags(new Tag("Postbacks", "Postback entity repository"))
             .apiInfo(new ApiInfo("CPA service demo API", "REST API of the CPA demo Service", "0.0.1", null, null, null, null, Lists.newArrayList()));
     }
 

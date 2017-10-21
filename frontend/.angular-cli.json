@@ -1,0 +1,124 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "cpa-browser"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist/browser",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.scss"
+      ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "scss"
+        ]
+      },
+      "scripts": [],
+      "browserslist": [
+        "iOS",
+        "iOS 6",
+        "iOS 7",
+        "Android",
+        "ie 10-11",
+        "> 5% in US",
+        "last 2 versions",
+        "> 1%",
+        "not ie < 10",
+        "not ie_mob < 10"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "platform": "server",
+      "root": "src",
+      "outDir": "dist/server",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.server.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.server.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.scss",
+        "../node_modules/primeng/resources/primeng.min.css",
+        "../node_modules/primeng/resources/themes/omega/theme.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
+      ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "scss"
+        ]
+      },
+      "scripts": [],
+      "browserslist": [
+        "iOS",
+        "iOS 6",
+        "iOS 7",
+        "Android",
+        "ie 10-11",
+        "> 5% in US",
+        "last 2 versions",
+        "> 1%",
+        "not ie < 10",
+        "not ie_mob < 10"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "class": {
+      "spec": false
+    },
+    "component": {}
+  }
+}
