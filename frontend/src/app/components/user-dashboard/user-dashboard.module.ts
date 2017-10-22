@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserDashboardComponent } from './user-dashboard.component';
 import { RouterModule } from '@angular/router';
-import { CpaSharedModule } from "../shared/shared.module";
+import { CpaSharedModule } from "../shared/cpa.shared.module";
 import { PostbackService } from "../../services/postback.service";
-
 
 @NgModule({
   imports: [

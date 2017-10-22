@@ -18,8 +18,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    this.pageXOffset = window.pageYOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
-
+    // this.pageXOffset = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
   }
 
   items: MenuItem[] = [

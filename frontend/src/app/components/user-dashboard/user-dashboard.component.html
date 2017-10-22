@@ -1,34 +1,47 @@
 <div class="user-dashboard-wrapper">
 
-  <p-dataTable [value]="postbacks._embedded.data" *ngIf="postbacks" >
-    <p-column field="id" header="ID" [sortable]="true" ></p-column>
-    <p-column field="prefix" header="Prefix"></p-column>
-    <p-column field="afid" header="AfID"></p-column>
-    <p-column field="" header="Buyer"></p-column>
-    <p-column field="date" header="Date"></p-column>
-    <p-column field="time" header="Time"></p-column>
-    <p-column field="date" header="Created"></p-column>
-    <p-column field="sum" header="Payout"></p-column>
-    <p-column field="currency" header="Currency"></p-column>
-    <p-column field="offerid" header="Offer ID "></p-column>
-    <p-column field="offername" header="Offer Name"></p-column>
-    <p-column field="idc" header="ComID"></p-column>
-    <p-column field="ido" header="OID"></p-column>
-    <p-column field="t1" header="Token T1"></p-column>
-    <p-column field="t2" header="Token T2"></p-column>
-    <p-column field="t3" header="Token T3"></p-column>
-    <p-column field="t4" header="Token T4"></p-column>
-    <p-column field="t5" header="Token T5"></p-column>
-    <p-column field="t6" header="Token T6"></p-column>
-    <p-column field="t7" header="Token T7"></p-column>
-    <p-column field="t8" header="Token T8"></p-column>
-    <p-column field="t9" header="Token T9"></p-column>
-    <p-column field="t10" header="Token T10"></p-column>
-    <p-column field="clickid" header="Click ID"></p-column>
-    <p-column field="transaction_id" header="Transaction ID"></p-column>
-    <p-column field="duplicate" header="Duplicate"></p-column>
-  </p-dataTable>
+  <p-menubar>
+    <button pButton label="Apply filters" icon="fa-filter"></button>
+    <button pButton label="Export" icon="fa-file-excel-o"></button>
+    <button pButton label="Postback" icon="fa-exchange"></button>
+  </p-menubar>
 
+  <p-dataTable [value]="postbacks._embedded.data" *ngIf="postbacks" sortField="date" rowHover="true" selectionMode="single">
+
+    <p-column field="id" header="ID" [sortable]="true" [filter]="true" styleClass="id"></p-column>
+    <p-column field="prefix" header="Prefix" [sortable]="true" [filter]="true" styleClass="prefix"></p-column>
+    <p-column field="afid" header="AfID" [sortable]="true" [filter]="true" styleClass="afid"></p-column>
+    <p-column field="" header="Buyer" [sortable]="true" [filter]="true" styleClass="bayer"></p-column>
+    <p-column field="date" header="Date" [sortable]="true" [filter]="true" filterMatchMode="between" styleClass="date">
+      <ng-template pTemplate="filter" let-col>
+        <div class="calendarFilter">
+          <p-calendar selectionMode="range" dateFormat="yy-mm-dd"></p-calendar>
+          <!--Between <p-calendar [(ngModel)]="dateFrom" appendTo="body" utc="true" dataType="string" [showIcon]="true" dateFormat="yy-mm-dd" (onBlur)="onBlurCalendar(dt, col.field, col.filterMatchMode)" (onSelect)="onSelectCalendar(dt,col.field, col.filterMatchMode)" styleClass="ui-column-filter"></p-calendar>-->
+          <!--and <p-calendar [(ngModel)]="dateTo" appendTo="body" utc="true" dataType="string" [showIcon]="true"  dateFormat="yy-mm-dd" (onBlur)="onBlurCalendar(dt, col.field,col.filterMatchMode)" (onSelect)="onSelectCalendar(dt,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-calendar>-->
+        </div>
+      </ng-template>
+    </p-column>
+    <p-column field="time" header="Time" [sortable]="true" [filter]="true" styleClass="time"></p-column>
+    <p-column field="sum" header="Payout" [sortable]="true" [filter]="true" styleClass="payout"></p-column>
+    <p-column field="currency" header="Currency" [sortable]="true" [filter]="true" styleClass="currency"></p-column>
+    <p-column field="offerid" header="Offer ID " [sortable]="true" [filter]="true" styleClass="offerid"></p-column>
+    <p-column field="offername" header="Offer Name" [sortable]="true" [filter]="true" styleClass="offername"></p-column>
+    <p-column field="idc" header="ComID" [sortable]="true" [filter]="true" styleClass="idc"></p-column>
+    <p-column field="ido" header="OID" [sortable]="true" [filter]="true" styleClass="ido"></p-column>
+    <p-column field="t1" header="Token T1" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t2" header="Token T2" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t3" header="Token T3" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t4" header="Token T4" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t5" header="Token T5" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t6" header="Token T6" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t7" header="Token T7" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t8" header="Token T8" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t9" header="Token T9" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="t10" header="Token T10" [sortable]="true" [filter]="true" styleClass="token"></p-column>
+    <p-column field="clickid" header="Click ID" [sortable]="true" [filter]="true" styleClass="clickid"></p-column>
+    <p-column field="transaction_id" header="Transaction ID" [sortable]="true" [filter]="true" styleClass="transaction"></p-column>
+    <p-column field="duplicate" header="Duplicate" [sortable]="true" [filter]="true" styleClass="duplicate"></p-column>
+  </p-dataTable>
 
 
 

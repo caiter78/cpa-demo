@@ -10,7 +10,11 @@ import { Pageable } from "../../util/hateoas.util";
 })
 export class UserDashboardComponent implements OnInit {
 
+  dateFrom: Date;
+  dateTo: Date;
+
   postbacks: Pageable<Postback>;
+  filters: any[];
 
 
   constructor(postbackService: PostbackService) {

@@ -4,16 +4,18 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { routing } from './app.routing';
-import { CpaSharedModule } from './components/shared/shared.module';
+import { CpaSharedModule } from './components/shared/cpa.shared.module';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: false});
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({appId: 'cpa-browser'}),
     rootRouting,
     routing,
+    BrowserModule.withServerTransition({appId: 'cpa-browser'}),
+    BrowserAnimationsModule,
     CpaSharedModule,
     HttpClientModule
   ],

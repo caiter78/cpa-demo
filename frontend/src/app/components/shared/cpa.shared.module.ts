@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ButtonModule, InputTextModule, MenubarModule, DataTableModule, SharedModule } from 'primeng/primeng';
+import {
+  ButtonModule, InputTextModule, MenubarModule, DataTableModule, SharedModule, CalendarModule, ToolbarModule
+} from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -13,7 +15,8 @@ import { ButtonModule, InputTextModule, MenubarModule, DataTableModule, SharedMo
     InputTextModule,
     ButtonModule,
     DataTableModule,
-    SharedModule
+    SharedModule,
+    CalendarModule
   ],
   declarations: [
     HeaderComponent,
@@ -28,7 +31,8 @@ import { ButtonModule, InputTextModule, MenubarModule, DataTableModule, SharedMo
     InputTextModule,
     ButtonModule,
     DataTableModule,
-    SharedModule
+    SharedModule,
+    CalendarModule
   ],
   providers: [
   ]

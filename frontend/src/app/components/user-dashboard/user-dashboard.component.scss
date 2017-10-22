@@ -1,5 +1,74 @@
-::ng-deep.ui-datatable table {
-  border-collapse: collapse;
-  width: auto;
-  table-layout: fixed;
+.user-dashboard-wrapper {
+
+  ::ng-deep.ui-datatable {
+    margin-top: 43px;
+    table {
+      border-collapse: collapse;
+      width: auto;
+      table-layout: fixed;
+
+      .id {
+        width: 150px;
+      }
+      .prefix {
+        width: 100px;
+      }
+      .afid {
+        width: 150px;
+      }
+      .bayer {
+        width: 100px;
+      }
+      .date {
+
+      }
+      .time {
+        width: 100px;
+      }
+      .payout {
+        width: 100px;
+      }
+      .currency {
+        width: 150px;
+      }
+      .offerid {
+        width: 150px;
+      }
+      .offername {
+        width: 150px;
+      }
+      .idc {
+        width: 100px;
+      }
+      .ido {
+        width: 100px;
+      }
+      .token {
+        width: 120px;
+      }
+      .clickid {
+        width: 100px;
+      }
+      .transaction {
+        width: 150px;
+      }
+      .duplicate {
+        width: 120px;
+      }
+
+    }
+
+  }
+
+  ::ng-deep p-menubar .ui-menubar {
+    position: fixed;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+    top: 44px;
+
+    .ui-menuitem.ui-menuitem-custom {
+      float: left;
+    }
+  }
 }
