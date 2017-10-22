@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@ApiModel(value = "Person")
+@ApiModel(value = "Postback")
 @Entity
 @Data
 public class Postback {

@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Api(tags = "Postbacks")
-@RepositoryRestResource(path = "postbacks", collectionResourceRel = "postbacks")
+@RepositoryRestResource(path = "postbacks", collectionResourceRel = "data")
 public interface PostbackRepository extends PagingAndSortingRepository<Postback, Long> {
 
     @ApiOperation(value = "Find postbacks by")

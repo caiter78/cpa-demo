@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>frontend</artifactId>
+    <name>frontend</name>
+    <description>Cpa ui module</description>
+    <packaging>jar</packaging>
+
+    <parent>
+      <groupId>com.omnia.cpa</groupId>
+      <artifactId>cpa</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <npm.build.cmd>run bundle</npm.build.cmd>
+            </properties>
+        </profile>
+        <profile>
+            <id>heroku</id>
+            <activation>
+                <property>
+                    <name>env.DYNO</name>
+                </property>
+            </activation>
+            <properties>
+                <npm.build.cmd>run bundle</npm.build.cmd>
+            </properties>
+        </profile>
+    </profiles>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>${frontend.plugin.version}</version>
+                <configuration>
+                    <nodeVersion>${node.version}</nodeVersion>
+                    <npmVersion>${npm.version}</npmVersion>
+                </configuration>
+                <executions>
+                    <!-- Installing node and npm locally to your project into node folder. -->
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                    </execution>
+
+                    <!-- Installing all node packaged modules locally to your project in the node_modules folder. -->
+                    <execution>
+                        <id>install node modules</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                    </execution>
+
+                    <!-- Build -->
+                    <execution>
+                        <id>build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>${npm.build.cmd}</arguments>
+                        </configuration>
+                    </execution>
+
+                    <!-- Run -->
+                    <!--<execution>-->
+                      <!--<id>run</id>-->
+                      <!--<goals>-->
+                        <!--<goal>npm</goal>-->
+                      <!--</goals>-->
+                      <!--<configuration>-->
+                        <!--<arguments>${npm.run.cmd}</arguments>-->
+                      <!--</configuration>-->
+                    <!--</execution>-->
+
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

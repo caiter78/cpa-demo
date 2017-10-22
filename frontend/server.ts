@@ -2,7 +2,7 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
-
+import * as proxy from 'http-proxy-middleware';
 import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
@@ -26,6 +26,20 @@ const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/mai
 import { ngExpressEngine } from '@nguniversal/express-engine';
 // Import module map for lazy loading
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
+
+const API_SERVER_URL = 'http://localhost:8080';
+const API_PREFIX = '/api';
+const WS_PREFIX = '/ws';
+
+let apiProxy = proxy(API_PREFIX, {target: API_SERVER_URL});
+let wsProxy = proxy(WS_PREFIX, {
+  target: API_SERVER_URL,
+  changeOrigin: true,                     // for vhosted sites, changes host header to match to target's host
+  ws: true,                               // enable websocket proxy
+  logLevel: 'debug'
+});
+app.use(apiProxy);
+app.use(wsProxy);
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({

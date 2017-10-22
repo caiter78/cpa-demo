@@ -1,7 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+  height: 100%;
+  width: max-content;
+}
+
 body {
   margin: 0px;
-  min-height: 100%;
+  height: calc(100% - 45px);
+  min-height: calc(100% - 45px);
   min-width: 100%;
+  overflow-y: scroll;
+  width: max-content;
+}
+
+.main-wrapper {
+}
+
+.router-outlet-wrapper {
+  margin-top: 45px;
 }
