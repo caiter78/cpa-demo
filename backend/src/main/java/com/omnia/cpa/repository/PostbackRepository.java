@@ -3,6 +3,7 @@ package com.omnia.cpa.repository;
 import com.omnia.cpa.annotation.PageableSwagger;
 import com.omnia.cpa.entity.Postback;
 import io.swagger.annotations.*;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
@@ -26,7 +27,7 @@ public interface PostbackRepository extends PagingAndSortingRepository<Postback,
         "(:prefix is null or p.prefix = :prefix) and" +
         "(:dateFrom is null or p.date >= :dateFrom) and " +
         "(:dateTo is null or p.date <= :dateTo)")
-    List<Postback> findBy(
+    Page<Postback> findBy(
         @Param("id") @ApiParam(name = "id", value = "Postback id") Long id,
         @Param("afid") @ApiParam(name = "afid", value = "Postback afid") Long afid,
         @Param("prefix") @ApiParam(name = "prefix", value = "Postback prefix") String prefix,

@@ -29,13 +29,13 @@
         width: 100px;
       }
       .currency {
-        width: 150px;
+        width: 110px;
       }
       .offerid {
-        width: 150px;
+        width: 110px;
       }
       .offername {
-        width: 150px;
+        width: 180px;
       }
       .idc {
         width: 100px;
@@ -56,6 +56,14 @@
         width: 120px;
       }
 
+    }
+
+    .ui-datatable-loading-content {
+      position: fixed;
+      left: 381px;
+      top: 50px;
+      z-index: 2;
+      height: 0px;
     }
 
   }

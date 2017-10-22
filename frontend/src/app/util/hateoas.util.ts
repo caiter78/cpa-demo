@@ -29,3 +29,9 @@ export class HateoasModel {
     self: Link
   }
 }
+
+export class PageReq {
+  page?: number;
+  size?: number;
+  sort?: string;
+}

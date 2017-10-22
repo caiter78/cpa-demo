@@ -31,9 +31,9 @@ public class Initializer implements ApplicationRunner {
 //
 //        log.info("=================================================================");
 //
-        List<Postback> postbacks = postbackRepository.findBy(null, null, null, LocalDate.parse("2017-07-31"),  LocalDate.parse("2017-08-01"), new PageRequest(0, 10, new Sort(Sort.Direction.ASC, "prefix")));
-
-        postbacks.forEach(item->log.info(item.toString()));
+//        List<Postback> postbacks = postbackRepository.findBy(null, null, null, LocalDate.parse("2017-07-31"),  LocalDate.parse("2017-08-01"), new PageRequest(0, 10, new Sort(Sort.Direction.ASC, "prefix")));
+//
+//        postbacks.forEach(item->log.info(item.toString()));
 
         log.info("=================================================================");
 //

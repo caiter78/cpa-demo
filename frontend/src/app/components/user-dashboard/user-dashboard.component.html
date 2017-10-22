@@ -6,7 +6,8 @@
     <button pButton label="Postback" icon="fa-exchange"></button>
   </p-menubar>
 
-  <p-dataTable [value]="postbacks._embedded.data" *ngIf="postbacks" sortField="date" rowHover="true" selectionMode="single">
+  <p-dataTable *ngIf="postbacks" [value]="postbacks._embedded.data" [lazy]="true" (onLazyLoad)="findPostbacks($event)" sortField="date" rowHover="true" selectionMode="single" [rows]="postbacks.page.size" [paginator]="true" [(first)]="first" [rowsPerPageOptions]="[20, 50, 100]"
+               [totalRecords]="postbacks.page.totalPages * postbacks.page.size"  (onPageChange)="paginate($event)" >
 
     <p-column field="id" header="ID" [sortable]="true" [filter]="true" styleClass="id"></p-column>
     <p-column field="prefix" header="Prefix" [sortable]="true" [filter]="true" styleClass="prefix"></p-column>
@@ -41,8 +42,9 @@
     <p-column field="clickid" header="Click ID" [sortable]="true" [filter]="true" styleClass="clickid"></p-column>
     <p-column field="transaction_id" header="Transaction ID" [sortable]="true" [filter]="true" styleClass="transaction"></p-column>
     <p-column field="duplicate" header="Duplicate" [sortable]="true" [filter]="true" styleClass="duplicate"></p-column>
+
   </p-dataTable>
 
-
+  <!--<p-paginator *ngIf="postbacks" [rows]="postbacks.page.size" [totalRecords]="postbacks.page.totalPages * postbacks.page.size" [rowsPerPageOptions]="[20, 50, 100]" (onPageChange)="paginate($event)" ></p-paginator>-->
 
 </div>

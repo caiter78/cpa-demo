@@ -7,6 +7,7 @@ import { routing } from './app.routing';
 import { CpaSharedModule } from './components/shared/cpa.shared.module';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpHelper } from "./util/http.helper";
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: false});
 
@@ -24,6 +25,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {useHash: fals
   ],
   providers: [
     HttpClient,
+    HttpHelper,
     { provide: 'Window', useValue: window }
   ],
   bootstrap: [AppComponent]

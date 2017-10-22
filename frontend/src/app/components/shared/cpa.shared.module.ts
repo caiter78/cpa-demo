@@ -4,7 +4,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {
-  ButtonModule, InputTextModule, MenubarModule, DataTableModule, SharedModule, CalendarModule, ToolbarModule
+  ButtonModule, InputTextModule, MenubarModule, DataTableModule, SharedModule, CalendarModule, ToolbarModule,
+  PaginatorModule
 } from 'primeng/primeng';
 
 @NgModule({
@@ -16,7 +17,8 @@ import {
     ButtonModule,
     DataTableModule,
     SharedModule,
-    CalendarModule
+    CalendarModule,
+    PaginatorModule
   ],
   declarations: [
     HeaderComponent,
@@ -32,7 +34,8 @@ import {
     ButtonModule,
     DataTableModule,
     SharedModule,
-    CalendarModule
+    CalendarModule,
+    PaginatorModule
   ],
   providers: [
   ]
