@@ -15,6 +15,7 @@
     "serve:static": "cd dist/browser && http-server",
     "serve:dynamic": "node dist/server",
     "serve:dev": "ng serve --proxy-config proxy.conf.json",
+    "serve:prod": "ng serve --prod --app 0 --proxy-config proxy.conf.json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
