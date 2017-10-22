@@ -1,7 +1,7 @@
 <div class="user-dashboard-wrapper">
 
-  <p-dataTable [value]="postbacks._embedded.data" *ngIf="postbacks">
-    <p-column field="id" header="ID" [sortable]="true"></p-column>
+  <p-dataTable [value]="postbacks._embedded.data" *ngIf="postbacks" >
+    <p-column field="id" header="ID" [sortable]="true" ></p-column>
     <p-column field="prefix" header="Prefix"></p-column>
     <p-column field="afid" header="AfID"></p-column>
     <p-column field="" header="Buyer"></p-column>
@@ -27,7 +27,9 @@
     <p-column field="clickid" header="Click ID"></p-column>
     <p-column field="transaction_id" header="Transaction ID"></p-column>
     <p-column field="duplicate" header="Duplicate"></p-column>
-
   </p-dataTable>
+
+
+
 
 </div>

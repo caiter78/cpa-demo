@@ -203,7 +203,7 @@
                             <resources>
                                 <resource>
                                     <directory>${basedir}/../frontend/dist/browser</directory>
-                                    <filtering>true</filtering>
+                                    <filtering>false</filtering>
                                 </resource>
                             </resources>
                         </configuration>

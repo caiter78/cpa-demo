@@ -1,5 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { ApplicationRef, Component, HostListener, Inject, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/primeng';
+import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: 'layout-header',
@@ -9,8 +10,16 @@ import { MenuItem } from 'primeng/primeng';
 
 export class HeaderComponent implements OnInit {
 
+  public pageXOffset: number = 0;
 
-  constructor() {
+  constructor(@Inject('Window') public window: Window,
+              @Inject(DOCUMENT) private document: Document) {
+  }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    this.pageXOffset = window.pageYOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+
   }
 
   items: MenuItem[] = [
